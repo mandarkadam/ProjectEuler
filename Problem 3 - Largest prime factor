@@ -1,0 +1,33 @@
+# Problem Statement
+The prime factors of 13195 are 5, 7, 13 and 29.
+
+What is the largest prime factor of the number 600851475143 ?
+
+# R Code
+##----------------------##
+
+# save the given number
+value <- 600851475143
+
+# start with 2 as the first factor
+i <- 2
+
+while(value >= i)
+{
+  # check if i is factor of value
+  if(value %% i == 0)
+  {
+    # update value - this will reduce the number of while iterations
+    value <-  value/i
+    # save the factor
+    factor <- i
+    i <- 2
+  }
+  else
+  {
+    i <- i+1 
+  }
+}
+##----------------------##
+
+# Solution variable: factor = 6857
